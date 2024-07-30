@@ -24,6 +24,7 @@ df = pd.DataFrame({'제품' : ["사과", "딸기", "수박"],
 df
 sum(df["가격"])/3
 sum(df["판매량"])/3
+<<<<<<< HEAD
 
 !pip install openpyxl
 import pandas as pd 
@@ -92,3 +93,5 @@ np.where(a >3, "Up", "Down")
 
 df_exam["updown"] = np.where(df_exam["math"] > 50, "Up", "Down")
 df_exam 
+=======
+>>>>>>> 82e1c4302480b7c0286914e65cc9c6708bfd4376

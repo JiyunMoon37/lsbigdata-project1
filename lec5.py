@@ -2,12 +2,17 @@ import numpy as np
 
 np.random.seed(42)
 a = np.random.randint(1, 21, 10)
+<<<<<<< HEAD
 a = np.random.choice(np.arange(1, 21), 10, False)
 print(a)
 
 a = np.random.choice(np.arange(1, 4), 100, True, np.array([2/5, 2/5, 1/5]))
 a
 
+=======
+print(a)
+
+>>>>>>> 82e1c4302480b7c0286914e65cc9c6708bfd4376
 print(a[1])
 
 a[2:5]
