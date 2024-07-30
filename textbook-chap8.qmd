@@ -1,0 +1,70 @@
+---
+title: "교과서 챕터8"
+format: html
+jupyter: python3
+---
+## 빈도 막대 그래프 그리기
+
+데이터 불러오기
+```{python}
+import pandas as pd 
+
+mpg = pd.read_csv("data/mpg.csv")
+
+df_mpg = mpg.groupby('drv', as_index = False) \
+            .agg(n = ('drv', 'count'))
+            
+df_mpg
+```
+
+seaborn 패키지 불러오기
+
+```{python}
+
+sns.barplot(data = df_mpg, x = 'drv', y = 'n')
+
+sns.countplot(data = mpg, x = 'drv')
+
+mpg['drv'].unique() #값 순서 알 수 있다.
+df_mpg['drv'].unique()
+
+#4, f, r 순으로 막대 정렬
+sns.countplot(data = mpg, x = 'drv', order = ['4', 'f', 'r'])
+
+mpg['drv'].value_counts().index
+
+sns.countplot(data = mpg, x = 'drv',
+              order = mpg['drv'].value_counts().index)
+```
+
+
+
+### `scatter()` 사용하기
+
+* seaborn 
+
+```{python}
+sns.scatter(data=mpg,
+            x = "displ", y = "hwy"
+            color = "drv") \
+    .set
+```
+
+
+* plotly를 사용한 산점도
+
+```{python}
+import pandas as pd
+mpg = pd.read_csv('mpg.csv')
+
+#산점도 만들기
+import plotly.express as px
+
+px.scatter(data_frame=mpg,
+            x = "displ", y = "hwy"
+            color = "drv")
+```
+
+
+
+
