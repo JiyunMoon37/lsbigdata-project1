@@ -12,7 +12,9 @@ np.random.seed(20240730)
 np.random.choice(df["이름"], 2, replace = False) #False라 중복되지 않게 뽑을 수 있다. 
 
 
-
+np.random.seed(20240801)
+np.random.choice(np.arange(7)+1, replace = False)
+np.random.choice(np.arange(4)+1, replace = False)
 
 
 

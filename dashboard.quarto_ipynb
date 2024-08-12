@@ -1,0 +1,106 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"팔머펭귄 대쉬보드\"\n",
+        "author: \"Issac Lee\"\n",
+        "format: \n",
+        "  dashboard:\n",
+        "    scrolling: true \n",
+        "    logo: \"penguins-cover.png\"\n",
+        "    nav-buttons:\n",
+        "      - icon: github\n",
+        "        href: https://github.com/issactoast/lsbigdata-project1/\n",
+        "---\n",
+        "\n",
+        "\n",
+        "# Page 1\n",
+        "\n",
+        "## 첫번째 {height=60%}\n"
+      ],
+      "id": "4560b31d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd\n",
+        "import numpy as np\n",
+        "import plotly.express as px\n",
+        "from palmerpenguins import load_penguins\n",
+        "\n",
+        "penguins = load_penguins()\n",
+        "# penguins.head()\n",
+        "\n",
+        "fig = px.scatter(\n",
+        "    penguins,\n",
+        "    x=\"bill_length_mm\",\n",
+        "    y=\"bill_depth_mm\",\n",
+        "    color=\"species\",\n",
+        "    # trendline=\"ols\" # p.134\n",
+        ")\n",
+        "fig.show()"
+      ],
+      "id": "e70bd19b",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## 두번째 {height=40%}\n",
+        "\n",
+        "### 테스트1 {.tabset}\n"
+      ],
+      "id": "2fab393d"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "#!pip install itables\n",
+        "import itables\n",
+        "\n",
+        "from itables import show\n",
+        "show(penguins, buttions = ['copy', 'excel', 'pdf'])"
+      ],
+      "id": "23bd8978",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "### 테스트2 \n",
+        "\n",
+        "::: {.card title=\"My Title\"}\n",
+        "\n",
+        "카드안에 들어있는 텍스트 입니다.\n",
+        "\n",
+        "![팔머펭귄](penguins-cover.png)\n",
+        "\n",
+        ":::\n",
+        "\n",
+        "# Page 2\n",
+        "\n",
+        "테스트"
+      ],
+      "id": "26489d3b"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "C:\\Users\\USER\\AppData\\Roaming\\Python\\share\\jupyter\\kernels\\python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
