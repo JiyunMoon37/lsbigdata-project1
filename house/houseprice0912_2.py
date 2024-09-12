@@ -1,4 +1,3 @@
-# 필요한 패키지 불러오기
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import ElasticNet, Ridge, Lasso, LinearRegression
